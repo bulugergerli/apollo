@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { deneme } from '../pages/TokenController';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
+  const navigate = useNavigate();
+
   const [registerFormData, setRegisterFormData] = useState({
     first_name: '',
     last_name: '',
@@ -39,6 +43,9 @@ function Login() {
       localStorage.setItem('token', token);
       console.log(token)
       console.log('Login successful');
+      navigate('/home');
+
+
     } catch (error) {
       console.error('Login failed:', error.message);
     }
