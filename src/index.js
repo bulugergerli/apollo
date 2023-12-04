@@ -9,8 +9,17 @@ import Order from './pages/Order.js';
 import Home from './pages/Home.js';
 import CurrentOrder from './pages/CurrentOrder';
 import Admin from './pages/Admin';
+import { Link } from 'react-router-dom';
+
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element:<div className="container d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
+
+    <button className="btn btn-primary"><div><Link to="/login" className="nav-link">Start Here</Link></div></button>
+  </div>   
+  },
   {
     path: "/login",
     element: <Login />
